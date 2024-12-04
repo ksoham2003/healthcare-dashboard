@@ -14,7 +14,7 @@ function App() {
       <Navbar />
 
       {/* Main Content */}
-      <Box sx={{ display: "flex", flexGrow: 1 }}>
+      <Box sx={{ display: "flex", flexGrow: 1 ,marginTop: "72px" }}>
         <CssBaseline />
 
         {/* Sidebar */}

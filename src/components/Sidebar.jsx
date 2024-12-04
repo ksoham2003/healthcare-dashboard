@@ -5,6 +5,7 @@ const patients = [
   { name: "Emily Williams", gender: "Female", age: 18 },
   { name: "Ryan Johnson", gender: "Male", age: 45 },
   { name: "Jessica Taylor", gender: "Female", age: 28 },
+  
 ];
 
 const Sidebar = () => (
