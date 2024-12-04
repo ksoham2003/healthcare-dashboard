@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Box, CssBaseline, Grid } from "@mui/material";
+import Sidebar from "./components/Sidebar";
+import DiagnosisHistory from "./components/DiagnosisHistory";
+import PatientDetails from "./components/PatientDetails";
+import DiagnosticList from "./components/DiagnosticList";
+import LabResults from "./components/LabResults";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box sx={{ display: "flex" }}>
+      {/* Reset CSS baseline for consistent styling */}
+      <CssBaseline />
+      
+      {/* Sidebar for patient navigation */}
+      <Sidebar />
+
+      {/* Main content */}
+      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+        <Grid container spacing={2}>
+          {/* Left side: Diagnosis history and diagnostic list */}
+          <Grid item xs={8}>
+            <DiagnosisHistory />
+            <DiagnosticList />
+          </Grid>
+
+          {/* Right side: Patient details and lab results */}
+          <Grid item xs={4}>
+            <PatientDetails />
+            <LabResults />
+          </Grid>
+        </Grid>
+      </Box>
+    </Box>
   );
 }
 
