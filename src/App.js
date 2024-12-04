@@ -5,31 +5,37 @@ import DiagnosisHistory from "./components/DiagnosisHistory";
 import PatientDetails from "./components/PatientDetails";
 import DiagnosticList from "./components/DiagnosticList";
 import LabResults from "./components/LabResults";
+import Navbar from "./components/Navbar"; 
 
 function App() {
   return (
-    <Box sx={{ display: "flex" }}>
-      {/* Reset CSS baseline for consistent styling */}
-      <CssBaseline />
-      
-      {/* Sidebar for patient navigation */}
-      <Sidebar />
+    <Box sx={{ display: "flex", flexDirection: "column", height: "100vh" }}>
+      {/* Navbar */}
+      <Navbar />
 
-      {/* Main content */}
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-        <Grid container spacing={2}>
-          {/* Left side: Diagnosis history and diagnostic list */}
-          <Grid item xs={8}>
-            <DiagnosisHistory />
-            <DiagnosticList />
-          </Grid>
+      {/* Main Content */}
+      <Box sx={{ display: "flex", flexGrow: 1 }}>
+        <CssBaseline />
 
-          {/* Right side: Patient details and lab results */}
-          <Grid item xs={4}>
-            <PatientDetails />
-            <LabResults />
+        {/* Sidebar */}
+        <Sidebar />
+
+        {/* Main Body */}
+        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+          <Grid container spacing={2}>
+            {/* Left side: Diagnosis history and diagnostic list */}
+            <Grid item xs={8}>
+              <DiagnosisHistory />
+              <DiagnosticList />
+            </Grid>
+
+            {/* Right side: Patient details and lab results */}
+            <Grid item xs={4}>
+              <PatientDetails />
+              <LabResults />
+            </Grid>
           </Grid>
-        </Grid>
+        </Box>
       </Box>
     </Box>
   );
